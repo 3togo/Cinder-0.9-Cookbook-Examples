@@ -8,4 +8,4 @@ This repository is by no means complete, it follows my learning path, hope you m
 ### Installation
 It is assumed that your cinder repositoriy is called "cinder_master" and that you clone this one next to it. Then all the example projects should compile out of the box. 
 
-Currently only ready made for MacOSX & Xcode.
+Currently only maintained for MacOSX & Xcode.
