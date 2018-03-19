@@ -21,7 +21,6 @@ class OcvVideoPlayerApp : public App {
 
 void OcvVideoPlayerApp::setup() {   
     
-    
     const fs::path filepath = getOpenFilePath();
     if ( mVideoPlayer.load( filepath ) ) {
         console() << mVideoPlayer.getFilePath() << " loaded successfully: ";
@@ -35,12 +34,13 @@ void OcvVideoPlayerApp::setup() {
         const ivec2& sz = mVideoPlayer.getSize();
         setWindowSize( sz );
         setWindowPos( ( getDisplay()->getSize() - sz ) / 2 );
+        setFrameRate(mVideoPlayer.getFrameRate());
         mVideoPlayer.play();
+        mVideoPlayer.setSpeed(10.0);
     } else {
         console() << "Unable to load movie" ;
         quit();
     }
-    
 }
 
 void OcvVideoPlayerApp::mouseDown( MouseEvent event ) {
